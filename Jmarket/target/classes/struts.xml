@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ <package name="login" namespace="/login" extends="struts-default">
+        <action name="index" class="jmarket.action.LoginAction">
+            <result name="success">
+         /index.jsp
+            </result>
+            <result name="error">
+         /login.jsp
+            </result>
+             <result name="failed">
+         /error.jsp
+            </result>
+        </action>
+    </package>
+   <package name="register" namespace="/register" extends="struts-default">
+        <action name="userRegister" class="jmarket.action.RegisterAction">
+            <result name="success">
+			/index.jsp
+            </result>
+            <result name="error">
+            /register.jsp
+            </result>
+            <result name="failed">
+			/error.jsp
+            </result>
+        </action>
+    </package>  
+	 <package name="default" namespace="/email" extends="struts-default">
+        <action name="sendEmail" class="jmarket.action.EmailAction" > 
+            <result name="success">/login.jsp</result>
+             <result name="error">
+            /register.jsp
+            </result>
+        </action>
+    </package>
+</struts>    

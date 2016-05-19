@@ -1,0 +1,6 @@
+腾讯云数据库：
+外网地址；568b41f626ddb.sh.cdb.myqcloud.com:6571
+外网账号:cdb_outerroot
+密码:jmarket2015
+
+jdbc:mysql://568b41f626ddb.sh.cdb.myqcloud.com:6571/jmarket

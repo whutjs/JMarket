@@ -1,0 +1,39 @@
+<ion-view>
+  <ion-content>
+    <div class="list list-inset settings-list" style="border: none;color: #333;">
+
+      <a href="#/app/modpwd" class="item item-icon-left item-icon-right bord-none b-b" style="margin-bottom: 0px;padding-left: 10px;padding-right: 10px;z-index: 9;font-size: 16px;">
+        <i class="fa fa-lock text-danger " style="font-size:20px;margin-right: 17px;"></i>
+        更改密码
+        <i class="icon ion-ios-arrow-right" style="width: 10px;"></i>
+      </a>
+      <a ng-click="actionSheetShow();" class="item item-icon-left item-icon-right bord-none b-b" style="margin-bottom: 0px;padding-left: 10px;z-index: 8;font-size: 16px;">
+        <i class="fa fa-camera text-warning-dker" style="margin-right: 12px;"></i>
+        更换头像
+        <i class="icon ion-ios-arrow-right" style="width: 10px;"></i>
+      </a>
+      <a ng-click="showPopupWechat();" class="item item-icon-left item-icon-right bord-none b-b" style="margin-bottom: 0px;padding-left: 10px;z-index: 7;font-size: 16px;">
+        <i class="fa fa-wechat text-success m-r-lg" style="margin-right: 11px;"></i>
+        更换微信
+        <i class="icon ion-ios-arrow-right" style="width: 10px;"></i>
+      </a>
+      <a ng-click="showPopupQQ();" class="item item-icon-left item-icon-right bord-none b-b" style="margin-bottom: 0px;padding-left: 10px;z-index: 6;font-size: 16px;">
+        <i class="fa fa-qq text-primary" style="margin-right: 14px;"></i>
+        更换QQ
+        <i class="icon ion-ios-arrow-right" style="width: 10px;"></i>
+      </a>
+      <a ng-click="showPopupPhone();" class="item item-icon-left item-icon-right bord-none b-b" style="margin-bottom: 0px;padding-left: 10px;z-index: 5;font-size: 16px;">
+        <i class="fa fa-phone text-danger-lter" style="font-size:20px;margin-right: 14px;"></i>
+        更换手机号
+        <i class="icon ion-ios-arrow-right" style="width: 10px;"></i>
+      </a>
+    </div>
+
+    <div class="list list-inset">
+      <button class="button button-full button-self-design bord-none" ng-click="exit()" style="border-radius: 20px;height: 36px;min-height: 36px;line-height: 36px;">
+        切换账号
+      </button>
+    </div>
+  </ion-content>
+
+</ion-view>

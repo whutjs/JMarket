@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.saveDir" value="/uploadimages" />
+	<constant name="struts.multipart.maxSize" value="102400000" />
+	<package name="login" namespace="/login" extends="struts-default">
+		<action name="index" class="jmarket.action.LoginAction">
+			<result name="success" type="redirectAction">
+			<param name="namespace">/search</param>
+			<param name="actionName">main</param>
+			</result>
+			<result name="error">
+				/login.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+	<package name="register" namespace="/register" extends="struts-default">
+		<action name="index" class="jmarket.action.RegisterAction">
+			<result name="success">
+				/registerTwo.jsp
+			</result>
+			<result name="error">
+				/register.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+	<package name="check" namespace="/check" extends="struts-default">
+		<action name="index" class="jmarket.action.CheckAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+	<package name="post" namespace="/post" extends="struts-default">
+		<action name="postItem" class="jmarket.action.UploadItemAction">
+			<result name="nologin">
+				/login.jsp
+			</result>
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+	<package name="usercenter" namespace="/usercenter" extends="struts-default">
+		<action name="message" class="jmarket.action.ShowMessageAction">
+			<result name="nologin">
+				/login.jsp
+			</result>
+			<result name="comment">
+				/personalPageNewMessage.jsp
+			</result>
+			<result name="success">
+				/personalPage.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	  <action name="item" class="jmarket.action.ShowUserItemAction">
+			<result name="nologin">
+				/login.jsp
+			</result>
+			<result name="comment">
+				/login.jsp
+			</result>
+			<result name="success">
+				/personalPageMyPost.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	 <action name="deleteitem" class="jmarket.action.DeleteItemAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">item</param>
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	<action name="password" class="jmarket.action.ChangePasswordAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+			<action name="wechat" class="jmarket.action.ChangeWeChatAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+		<action name="qq" class="jmarket.action.ChangeQQAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+		<action name="phone" class="jmarket.action.ChangePhoneAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+		<action name="changeitem" class="jmarket.action.RepostItemAction">
+			<result name="success">
+				/repost.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	    <action name="repost" class="jmarket.action.ChangeItemAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+		<action name="logout" class="jmarket.action.LogoutAction">
+			<result name="success">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+	<package name="detail" namespace="/detail" extends="struts-default">
+		<action name="getdetail" class="jmarket.action.GetDetailAction">
+			<result name="success">
+				/detailpage.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+		<action name="comment" class="jmarket.action.CommentAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">getdetail</param>
+				<param name="itemID">${itemid}</param>
+				<param name="encode">true</param>
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+			<result name="nologin">
+				/login.jsp
+			</result>
+		</action>
+	</package>
+	<package name="struts2" namespace="/" extends="json-default">
+		<action name="upload" class="jmarket.action.UploadAction">
+			<result name="success" type="json">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+		<action name="avatar" class="jmarket.action.ChangeAvatarAction">
+			<result name="success" type="json">
+				<param name="root">jsonMap</param>
+			</result>
+		</action>
+	</package>
+	<!-- <package name="image" namespace="/" extends="json-default"> <action 
+		name="uploadImageAction" class="jmarket.action.UploadImageAction" > <result 
+		name="success" type="json"> </result> </action> </package> -->
+	<package name="search" namespace="/search" extends="struts-default">
+		<action name="main" class="jmarket.action.SearchAction">
+			<result name="success">
+				/mainpage.jsp
+			</result>
+			<result name="noresult">
+				/registerThree.jsp
+			</result>
+			<result name="error">
+				/registerTwo.jsp
+			</result>
+			<result name="failed">
+				/error.jsp
+			</result>
+		</action>
+	</package>
+
+        <package name="mobile" extends="json-default" namespace="/m">
+    	<action name="registerAction" class="jmarket.action.MRegisterAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		<action name="loginAction" class="jmarket.action.MLoginAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		<action name="emailAction" class="jmarket.action.MEmailAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		<action name="uploadFileAction" class="jmarket.action.MImageAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		<action name="postItemAction" class="jmarket.action.MPostItemAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="getItemAction" class="jmarket.action.MGetItemAction" method="execute">
+			<result type="json">  
+                <!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="uploadAvatarAction" class="jmarket.action.MUploadAvatarAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="modifyUserInfoAction" class="jmarket.action.MModifyUserInfoAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="changePswAction" class="jmarket.action.MChangePswAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="searchAction" class="jmarket.action.MSearchAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="commitMsgAction" class="jmarket.action.MCommitMessageAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+		<action name="getCommentAction" class="jmarket.action.MGetCommentAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>		
+		<action name="getUserItemCommentAction" class="jmarket.action.MGetUserItemAndCommentAction" method="execute">
+			<result type="json">  
+                <param name="root">jsonMap</param>  
+            </result>  			
+		</action>
+		
+    </package>
+</struts>    

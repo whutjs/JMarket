@@ -1,0 +1,68 @@
+<ion-view>
+  <!--<ion-header-bar class="bg-yellow-color">-->
+    <!--<div class="buttons">-->
+      <!--<button class="button button-clear btn-clear left" ng-click="closeLogin()"><i class="icon ion-ios-arrow-left"></i></button>-->
+    <!--</div>-->
+    <!--<h1 class="title">登录页</h1>-->
+  <!--</ion-header-bar>-->
+  <ion-content class="content" overflow-scroll="true" style="overflow: hidden">
+    <form  ng-submit="doLogin()" name="loginForm" class="login-form">
+      <div class="list">
+        <label class="item item-input login-self-define-color">
+          <div class="user" style="width: 80px;height: 80px; border-radius: 40px;">
+            <i class="icon ion-ios-person"></i>
+          </div>
+        </label>
+        <label class="item item-input login-self-define-color input-line mailbox m-t-sm">
+          <i class="icon ion-ios-person"></i>
+          <input type="email" name="userEmail" class="login-input" mail id="mailbox" required ng-model="loginData.email" placeholder="交大邮箱">
+          <!--<span style="color: #FF3030;" ng-show="!loginForm.userEmail.$valid">有错</span>-->
+        </label>
+        <label class="item item-input login-self-define-color m-t-sm">
+          <!-- 隐藏块，显示验证信息-->
+          <!--<span style="color: #FF3030;" ng-show="loginForm.userEmail.$error.required">必填</span>-->
+          <p style="color: #FF3030;" ng-show="loginForm.userEmail.$error.validatemail">请使用交大邮箱登录</p>
+        </label>
+      </div>
+        </label>
+        <label class="item item-input login-self-define-color input-line m-t-sm">
+          <i class="icon ion-ios-locked"></i>
+          <input type="password" name="userPwd" required ng-minlength="6" ng-maxlength="20" class="login-input" ng-model="loginData.password" placeholder="您的密码">
+        </label>
+        <label class="item item-input login-self-define-color m-t-sm">
+          <!--<p style="color: #FF3030;" ng-show="loginForm.userPwd.$error.required">必填</p>-->
+          <p style="color: #FF3030;" ng-show="loginForm.userPwd.$error.minlength" class="help-block">密码太短</p>
+          <p style="color: #FF3030;" ng-show="loginForm.userPwd.$error.maxlength" class="help-block">密码太长</p>
+        </label>
+        <label class="item item-checkbox login-self-define-color m-t-sm">
+          <!--<i class="icon ion-ios-checkmark-outline positive"></i>-->
+          <label class="checkbox">
+            <input type="checkbox"  ng-model="isRemember">
+          </label>
+          <style>
+            .checkbox input:after, .checkbox-icon:after {
+              top: 30% !important;
+              left: 22% !important;
+              width: 8px !important;
+              height: 4px !important;
+            }
+            .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+              background: #FFD300;
+              border-color: #FFD300;
+            }
+          </style>
+          <span class="remember-me">记住我</span>
+        </label>
+        <label class="item" style="padding: 0px 0px 20px 0px; ">
+          <button class="button button-block login-button bord-none" type="submit" ng-disabled="loginForm.$invalid">登录</button>
+          <!--<button class="buton button-clear text-yellow-color right btn-clear" onclick="registerUser()">注册</button>
+          <button class="buton button-clear text-yellow-color left btn-clear" onclick="forgetPsw()">忘记密码?</button>-->
+        </label>
+      </div>
+    </form>
+    <div style="padding: 0px 20px;">
+      <a href="#/guest/register" style="float: right;color: #000;" id="btn_login_page_register">注册</a>
+      <button ng-click="forgetPassword()" style="float: left;color: #000;background: transparent;border: none;" id="btn_forget_pwd">忘记密码</button>
+    </div>
+  </ion-content>
+</ion-view>

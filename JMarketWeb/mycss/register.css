@@ -1,0 +1,350 @@
+.father-container{
+    margin-top: 50px;
+    width: 100%;
+    padding: 2.5%;
+    position: relative;
+}
+.father-container .sidebar-container{
+    width: 25%;
+    float: left;
+}
+.father-container .content-container{
+    width: 75%;
+    float: right;
+}
+.details-top, .details-bottom{
+    width: 100%;
+}
+.register-div{
+    height: auto;
+    width: 100%;
+    color: #b0b0b0;
+}
+.register-form{
+    height: auto;
+    width: 60%;
+    margin: auto;
+}
+.register-input{
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    font-size: 1.1em;
+    color: #fff;
+}
+.btn-register{
+    background-color: #FFD300;
+    width: 100%;
+    color: #000;
+    font-size: 1.1em !important;
+    font-weight: 600;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin-bottom: 15px;
+    margin-top:15px;
+}
+.btn-register:hover{
+    background-color: #FFB300;
+}
+#login{
+    color: #FFD300;
+}
+.register-form>.form-control{
+    color: #FFF;
+}
+.breadcrumb-first-level{
+    color: #808080;
+}
+.breadcrumb-second-level{
+    color: #222;
+    font-weight: 600;
+}
+.breadcrumb {
+    margin-bottom: 30px;
+}
+.breadcrumb > li {
+    display: inline-block;
+    text-shadow: 0 1px 0 #ffffff;
+}
+.heading1 {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #efefef;
+    margin-top: 0px;
+    font-size: 34px;
+}
+.heading1 .maintext {
+    font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    padding: 0px 14px 4px 0;
+    font-family: 'Crete Round', serif;
+}
+.heading1 .subtext {
+    font-size: 14px;
+    color: #999;
+    text-transform: none;
+    font-weight: normal;
+    padding: 0px;
+}
+#register_form {
+    text-align: center;
+    position: relative;
+}
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    text-align: center;
+    padding: 0;
+}
+#progressbar li {
+    list-style-type: none;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #FFD300;
+    color: #333;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #FFD300;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin: 0 auto 5px auto;
+}
+#progressbar li:first-child:after {
+    content: none;
+}
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    left: -50%;
+    top: 20px;
+    z-index: -1;
+}
+#register_form fieldset {
+    background: white;
+    border: 0 none;border: 1px solid  #f0f0f0;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 76%;
+    margin: 0 12%;
+    position: absolute;
+}
+.fs-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+#register_form input {
+    padding: 10px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    /*margin-bottom: 10px;*/
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+    box-shadow: none;
+}
+#register_form .action-button {
+    background: #FFD300;
+    font-weight: bold;
+    color: #333;
+    border: 0 none;
+    border-radius: 1px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+}
+.input-group-line{
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0px;
+}
+.input-group-addon {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+}
+.code{
+    border-bottom: 1px solid #808080 !important;
+}
+#register_form input{
+    outline: none;
+}
+.previous{
+    background-color: transparent !important;
+    float: left !important;
+    font-weight: normal !important;
+    width: 50px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #666 !important;
+}
+.previous:hover{
+    color: #FFD300 !important;
+}
+.congratulate{
+    color: #333;
+    font-weight: 600;
+}
+.success{
+    border: none !important;
+    background: #FFD300 !important;
+}
+.btn-disabled{
+    background: #ccc !important;
+}
+
+
+
+
+
+@media screen and (max-width : 500px){
+    #register_form.form-control {
+        height: 22px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 10px !important;
+    }
+    .btn-register{
+        height: 24px;
+        font-size: 0.85em !important;
+        padding: 2px 12px !important;
+    }
+    .sjtu-logo{
+        width: 50px;
+        height: 50px;
+    }
+    #register_form fieldset {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .register-form{
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width : 500px) and (max-width: 768px){
+    #register_form.form-control {
+        height: 28px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 18px !important;
+    }
+    .btn-register{
+        height: 28px;
+        font-size: 0.85em !important;
+        padding: 2px 12px !important;
+    }
+    .sjtu-logo{
+        width: 60px;
+        height: 60px;
+    }
+    #register_form fieldset {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .register-form{
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width : 768px) and (max-width: 1000px){
+    #register_form.form-control {
+        height: 32px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 24px !important;
+    }
+    .sjtu-logo{
+        width: 80px;
+        height: 80px;
+    }
+    #register_form fieldset {
+        width: 100% !important;
+        margin: 0!important;
+    }
+    .register-form{
+        width: 80% !important;
+    }
+}
+@media screen and (min-width : 1000px) and (max-width: 1200px){
+    .sjtu-logo{
+        width: 90px;
+        height: 90px;
+    }
+    #register_form fieldset {
+        width: 86% !important;
+        margin: 0 7% !important;
+    }
+    .register-form{
+        width: 70% !important;
+    }
+}
+@media screen and (min-width : 1200px) and (max-width: 1366px){
+    #register_form.form-control {
+        height: 36px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 30px !important;
+    }
+    .sjtu-logo{
+        width: 100px;
+        height: 100px;
+    }
+    #register_form fieldset {
+        width: 86% !important;
+        margin: 0 7% !important;
+    }
+}
+
+@media screen and (min-width : 1366px){
+    #register_form.form-control {
+        height: 40px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 36px !important;
+    }
+    .sjtu-logo{
+        width: 120px;
+        height: 120px;
+    }
+}

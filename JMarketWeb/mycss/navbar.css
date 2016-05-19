@@ -1,0 +1,106 @@
+.navbar{
+    border: none !important;
+}
+.navbar-brand{
+    text-transform:uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #333 !important;
+    font-weight: 700;
+}
+.navbar-inverse{
+    border-color: transparent;
+}
+.navbar-nav>li>a{
+    color: #666 !important;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none;
+    margin-bottom: 0px;
+}
+#search_item{
+    border-radius: 20px;
+    border: none;
+}
+.btn-search{
+    background-color: transparent!important;
+    width: 34px;
+    margin-right: 40px;
+    color: #666;
+}
+.wrapper_navbar_navbar.at-top .navbar.navbar-inverse {
+    background-color: rgba(255, 211, 0, 1);
+    /*-webkit-transition: background-color .5s;*/
+    /*-moz-transition: background-color .5s;*/
+    /*transition: background-color .5s;*/
+}
+.wrapper_navbar_navbar .navbar.navbar-inverse {
+    background: rgba(51,51,51,0.5);
+}
+.nav-inline>li{
+    display: inline-block;
+}
+#nav_login:hover, #nav_register:hover{
+    color: #000 !important;
+    background-color: transparent !important;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: transparent;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+   outline: none;
+}
+.btn.active, .btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar-nav>.open>a{
+    background-color: transparent !important;
+}
+
+
+@media screen and (max-width : 500px){
+    .navbar-brand{
+        font-size: 24px;
+    }
+    #search_item{
+        width: 200px;
+    }
+    .navbar-form .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+}
+@media screen and (min-width : 500px) and (max-width: 768px){
+    .navbar-brand{
+        font-size: 32px;
+    }
+    #search_item{
+        width: 240px;
+    }
+    .navbar-form .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
+}
+@media screen and (min-width : 768px) and (max-width: 1000px){
+    .navbar-brand{
+        font-size: 38px;
+    }
+    #search_item{
+        width: 240px;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .navbar-brand{
+        font-size: 42px;
+    }
+    #search_item{
+        width: 320px;
+    }
+}

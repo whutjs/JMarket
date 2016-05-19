@@ -1,0 +1,88 @@
+.sample {
+        background: #fff;
+        border: 1px solid #d7d7d7;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 35px auto;
+        padding: 40px 25px 20px;
+        max-width: 1000px;
+}
+#timeline {
+        height: 0;
+        padding: 0;
+        margin: 0;
+        display: none;
+}
+.sample h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        background: #FFD300;
+        padding: 20px 25px 20px;
+        border:none;
+        margin: -40px -25px 35px;
+        position: relative;
+}
+.sample h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 0 10px;
+        padding: 0;
+        color: #666;
+}
+.sample img {
+        clear: both;
+        float: right;
+        width: 80px;
+        height: 80px;
+}
+.sample p {
+        margin: 0;
+        color: #5e5652;
+        padding: 0 0 18px;
+}
+.sample h6 {
+        font-size: 14px;
+        margin: 0 0 15px;
+        padding: 0;
+        color: #333;
+        font-weight: bold;
+}
+.sample p {
+        margin: 0;
+        color: #5e5652;
+        padding: 0 0 18px;
+}
+.sample div.hr_light {
+        background: #d7d7d7;
+        margin: 20px -25px 35px;
+        padding: 0 25px 1px;
+        position: relative;
+        color: #fff;
+}
+.sample div.hr_light:before {
+        position: absolute;
+        display: block;
+        border-color: transparent;
+        border-style: solid;
+        bottom: -13px;
+        left: 45px;
+        border-top-color: #d7d7d7;
+        content: " ";
+        border-width: 7px;
+        box-sizing: border-box;
+        z-index: 2;
+}
+.sample div.hr_light:after {
+        position: absolute;
+        display: block;
+        border-color: transparent;
+        border-style: solid;
+        bottom: -11px;
+        left: 46px;
+        border-top-color: #fff;
+        content: " ";
+        border-width: 6px;
+        box-sizing: border-box;
+        z-index: 2;
+}

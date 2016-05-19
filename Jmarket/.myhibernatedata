@@ -1,0 +1,25 @@
+#MyEclipse Hibernate Properties
+#Sat Nov 28 21:04:36 CST 2015
+sessionFactoryName=jmarket.util.HibernateSessionFactory
+genBasicCompId=false
+profile=
+daoSFId=
+version=4.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+detectO2O=false
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=WebRoot/WEB-INF/lib
+addLibs2Project=false
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/jmarket/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=false
+baseDaoClass=jmarket.dao.BaseHibernateDAO

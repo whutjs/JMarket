@@ -1,0 +1,147 @@
+.other-profile{
+  width: auto;
+  /*height: 200px;*/
+  background-color: transparent;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 60px;
+}
+.terminal{
+  padding: 15px;
+}
+.terminal p{
+  color: #666;
+}
+.item-content{
+  font-size: 0.8em;
+  margin-left: 25px;
+}
+
+.font-size-12{
+  font-size: 12px;
+}
+.font-size-24{
+  font-size: 24px;
+}
+.btn-self-define{
+  border: 1px solid #FFD300;
+  background-color: #fff;
+}
+.color-self-define {
+  color: #FFD300;
+}
+.chg-pwd-form, .chg-wechat-form, .chg-phone-form, .chg-qq-form{
+  margin: auto;
+  padding: 25px;
+  max-width: 600px;
+}
+.div-box{
+  background-color: #FFF;
+  margin-bottom: 80px;
+}
+/*.div-box #chg_pwd_form, #chg_phone_form, #chg_qq_form{*/
+
+/*}*/
+
+#chg_pwd_form .control-group, #chg_wechat_form .control-group, #chg_phone_form .control-group, #chg_qq_form .control-group{
+  display: inline-block;
+  width: 100%;
+}
+#chg_pwd_form .control-group .control-label, #chg_wechat_form .control-group .control-label, #chg_phone_form .control-group .control-label, #chg_qq_form .control-group .control-label{
+  float: left;
+  width: 15%;
+  font-weight: normal;
+  line-height: 36px;
+}
+#chg_pwd_form .control-group .controls, #chg_wechat_form .control-group .controls, #chg_phone_form .control-group .controls, #chg_qq_form .control-group .controls{
+  float: left;
+  width: 85%;
+  margin-bottom: 5px;
+}
+#chg_pwd_form .control-group .control-submit, #chg_wechat_form .control-group .control-submit, #chg_phone_form .control-group .control-submit, #chg_qq_form .control-group .control-submit{
+  float: right;
+}
+
+#chg_pwd_form .control-group .controls input, #chg_wechat_form .control-group .controls input, #chg_phone_form .control-group .controls input, #chg_qq_form .control-group .controls input{
+  width: 100%;
+  height: 36px;
+  padding: 2px 10px;
+  float: left;
+}
+#chg_pwd_form .control-group .controls .help-block, #chg_wechat_form .control-group .controls .help-block, #chg_phone_form .control-group .controls .help-block, #chg_qq_form .control-group .controls .help-block{
+  font-size: 12px;
+  color: #808080;
+  float: left;
+}
+#btn_submit {
+  width: 100%;
+  height: 36px;
+  background-color: #FFD300;
+  color: #333;
+  font-size: 16px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  margin-top: 10px;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+}
+#btn_submit:hover{
+  color: #FFD300;
+  border: 1px solid #FFD300;
+  background-color: #FFF;
+}
+.bg-white-opacity {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.post-list{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 80px;
+}
+.list-border{
+  border-left: 1px solid #FFD300;
+}
+.navbar-right {
+    margin-right: 0px !important;
+}
+
+@media screen  and (max-width: 500px){
+  #chg_pwd_form .control-group .control-label, #chg_wechat_form .control-group .control-label, #chg_phone_form .control-group .control-label, #chg_qq_form .control-group .control-label{
+    width: 28%;
+    line-height: 24px;
+  }
+  #chg_pwd_form .control-group .controls, #chg_wechat_form .control-group .controls, #chg_phone_form .control-group .controls, #chg_qq_form .control-group .controls{
+    width: 72%;
+  }
+  #chg_pwd_form .control-group .controls input, #chg_wechat_form .control-group .controls input, #chg_phone_form .control-group .controls input, #chg_qq_form .control-group .controls input {
+    height: 24px;
+  }
+}
+
+@media screen  and (min-width: 500px) and (max-width: 768px){
+  #chg_pwd_form .control-group .control-label, #chg_wechat_form .control-group .control-label, #chg_phone_form .control-group .control-label, #chg_qq_form .control-group .control-label{
+    width: 20%;
+    line-height: 28px;
+  }
+  #chg_pwd_form .control-group .controls, #chg_wechat_form .control-group .controls, #chg_phone_form .control-group .controls,  #chg_qq_form .control-group .controls{
+    width: 80%;
+  }
+  #chg_pwd_form .control-group .controls input, #chg_wechat_form .control-group .controls input, #chg_phone_form .control-group .controls input, #chg_qq_form .control-group .controls input{
+    height: 28px;
+  }
+}
+@media screen  and (min-width: 768px) and (max-width: 1000px){
+  #chg_pwd_form .control-group .control-label, #chg_wechat_form .control-group .control-label, #chg_phone_form .control-group .control-label, #chg_qq_form .control-group .control-label{
+    width: 20%;
+    line-height: 32px;
+  }
+  #chg_pwd_form .control-group .controls, #chg_wechat_form .control-group .controls, #chg_phone_form .control-group .controls, #chg_qq_form .control-group .controls{
+    width: 80%;
+  }
+  #chg_pwd_form .control-group .controls input, #chg_wechat_form .control-group .controls input, #chg_phone_form .control-group .controls input, #chg_qq_form .control-group .controls input{
+    height: 32px;
+  }
+}

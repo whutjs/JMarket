@@ -1,0 +1,103 @@
+<style>
+  #btn_search:before {
+    vertical-align: top;
+    font-size: 24px;
+    line-height: 32px;
+  }
+</style>
+<ion-side-menus enable-menu-with-back-views="false" xmlns="http://www.w3.org/1999/html">
+  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!--<ion-header-bar class="bar-stable">-->
+      <!--<h1 class="title">JMarket</h1>-->
+    <!--</ion-header-bar>-->
+    <ion-content class="sidebar-scroll">
+      <div class="row responsive-sm">
+        <div class="col m-b-none b-b">
+          <a href="" class="thumb-md left img-box">
+            <img ng-src="{{userData.image}}" class="img-circle img-avatar left">
+          </a>
+          <div class="clear pull-left" style="max-width: 150px;">
+            <div class="m-b m-t-sm m-l-md left" style="max-width: 150px;">
+              <p class="app-user" style="max-width: 150px;width: 150px;max-height:32px;overflow: hidden;text-overflow: ellipsis;display: inline-block;">{{userData.username}}</p>
+              <br>
+              <p class="app-mailbox">{{userData.email}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ion-list>
+        <form>
+          <div class="row">
+            <div class="col col-90">
+              <input type="text" ng-model="searchInput.keyword" class="form-control" placeholder="输入内容" style="border: 1px solid #ccc;border-radius: 20px;padding: 5px 8px;float:left; width: 100%;">
+            </div>
+            <div class="col col-10">
+            <span class="input-group-btn">
+              <!--<i class="icon ion-ios-search-strong" style="float: right;line-height: 34px;"></i>-->
+              <a ng-click="mySearch();" class="icon ion-ios-search-strong" style="font-size:1.7em;float: right;line-height: 34px;cursor: pointer;"></a>
+            </span>
+            </div>
+          </div>
+        </form>
+        <ion-item menu-close href="#/app/main">
+          <i class="ion-ios-home-outline m-r-md font-size-18" style="font-size: 22px; color: #B9B9B9"></i>主页
+        </ion-item>
+        <ion-item menu-close href="#/app/upload">
+          <i class="ion-ios-compose-outline m-r-md" style="font-size: 22px; color: #B9B9B9"></i>发布
+        </ion-item>
+
+        <!--<div ng-repeat="group in groups">-->
+          <!--<ion-item class=""-->
+                    <!--ng-click="toggleGroup(group)"-->
+                    <!--ng-class="{active: isGroupShown(group)}">-->
+            <!--<i class="icon m-r-md" ng-class="isGroupShown(group) ? 'ion-navicon' : 'ion-navicon'" style="font-size: 22px;color: #B9B9B9"></i>{{group.name}}-->
+          <!--</ion-item>-->
+          <!--<ion-item class="item-accordion"-->
+                    <!--ng-repeat="item in group.items"-->
+                    <!--ng-click=""-->
+                    <!--ng-show="isGroupShown(group)" style="font-size: 13px;margin-bottom: 10px;">-->
+            <!--<i class='ion-ios-arrow-right' style='font-size: 14px; margin-right: 18px;'></i>{{item}}-->
+          <!--</ion-item>-->
+        <!--</div>-->
+        <ion-item menu-close href="#/app/me">
+          <i class="ion-ios-person-outline m-r-md" style="font-size: 22px; color: #B9B9B9"></i>个人资料
+        </ion-item>
+        <!--<ion-item menu-close href="#/app/register">-->
+          <!--<i class="fa fa-user-md m-r-md" style="font-size: 24px; color: #B9B9B9"></i>注册-->
+        <!--</ion-item>-->
+        <!--<ion-item menu-close href="#/app/stars">-->
+          <!--个人收藏-->
+        <!--</ion-item>-->
+        <!--<ion-item menu-close href="#/app/upload">-->
+          <!--上传图片-->
+        <!--</ion-item>-->
+
+        <!--<ion-item menu-close href="#/app/playlists">-->
+          <!--Playlists-->
+        <!--</ion-item>-->
+      </ion-list>
+      <div class="b-b"></div>
+      <ion-list>
+        <ion-item menu-close href="#/app/settings">
+          <i class="ion-ios-gear-outline m-r-md font-size-18" style="font-size: 22px; color: #B9B9B9"></i>设置
+        </ion-item>
+        <ion-item menu-close href="#/guest/main" ng-click= "exit()">
+          <i class="ion-ios-close-outline m-r-md" style="font-size: 22px; color: #B9B9B9"></i>退出
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

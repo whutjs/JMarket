@@ -1,0 +1,307 @@
+.post-container{
+    margin-top: 50px;
+}
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+    text-align: center;
+    padding: 0;
+}
+#progressbar li {
+    list-style-type: none;
+    color: #666;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+}
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #FFD300;
+    color: #333;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 10px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #FFD300;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin: 0 auto 5px auto;
+}
+#progressbar li:first-child:after {
+    content: none;
+}
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    left: -50%;
+    top: 20px;
+    z-index: -1;
+}
+#post_form{
+    margin-top: 50px;
+}
+#post_form fieldset {
+    background: white;
+    border: 0 none;border: 1px solid  #f0f0f0;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 0 15%;
+    margin-bottom: 100px;
+}
+ul{
+    list-style: none;
+}
+.all-types li h5{
+    color: #333;
+    font-weight: 600;
+}
+.secondary-types li a{
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+}
+.secondary-types li a:hover{
+    color: #FFD300;
+    font-size: 14px;
+}
+
+.btn-file {
+  color: #333;
+  background-color: #FFD300;
+  border-color: #FFD300;
+}
+.btn-file input[type=file]:hover,.btn-file input[type=file]:active,.btn-file input[type=file]:visited, .btn-file input[type=file]:focus{
+  background-color: #FFA300 !important;
+  border-color: #FFA300 !important;
+}
+
+#field_detail .control-group{
+  display: inline-block;
+  width: 100%;
+}
+#field_detail .control-group .control-label{
+  float: left;
+  width: 10%;
+  font-weight: normal;
+}
+#field_detail .control-group .controls{
+  float: left;
+  width: 90%;
+  margin-bottom: 5px;
+}
+#field_detail .control-group .controls input{
+  width: 60%;
+  padding: 2px 10px;
+}
+#field_detail .control-group .controls .price{
+  width: 20%;
+}
+#field_detail .control-group .controls select{
+  width: 19.6%;
+  height: 30px;
+}
+#field_detail .control-group .controls textarea{
+  width: 80%;
+  min-height: 240px;
+  padding: 2px 10px;
+}
+#field_detail .control-group .controls .help-block{
+  font-size: 12px;
+  color: #808080;
+  width: 80%;
+}
+.btn-post{
+  width: 200px !important;
+  height: 36px;
+  background-color: #FFD300;
+  color: #333;
+  font-size: 16px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 11%;
+}
+.btn-post:hover{
+  color: #FFD300;
+  border: 1px solid #FFD300;
+  background-color: #FFF;
+}
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary,.btn-primary:hover,.btn-primary:focus {
+  color: #FFD300;
+  background-color: #FFF !important;
+  border-color: #FFD300 !important;
+}
+.congratulate{
+  color: #333;
+  font-weight: 600;
+}
+#field_success{
+  border: none !important;
+  background: #FFD300 !important;
+}
+
+.post-img {
+        width: 100%;
+        border: 1px dotted #ccc;
+        min-width: 120px;
+        min-height: 120px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 3px;
+}
+.post-img:hover {
+        border: 1px dotted #ee3939;
+}
+.no-padding-left{
+        padding-left:0 !important;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    /*background: #FFD300;
+    border: 1px solid #FFD300;
+    border-radius: 0px;
+    padding: 0px 10px; 
+    height: 32px;
+    width: 120px;
+    line-height: 32px;*/
+    overflow: hidden;
+    color: #333;
+    text-decoration: none;
+    text-indent: 0;
+    text-align: center;
+    border-radius: 20px;
+}
+.file input {
+        position: absolute;
+        font-size: 100px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+}
+#btn_post{
+	border-radius:25px;
+}
+.file:hover {
+        /*background: #AADFFD;*/
+        /*border-color: #78C3F3;
+        background-color: #FFC300;*/
+        text-decoration: none;
+}
+#row_img_box img{
+        height: auto;
+        min-height: 80px;
+        min-width: 80px;
+        width: 100%;
+}
+
+@media screen  and (max-width: 500px){
+  #field_detail .control-group .control-label{
+    float: left;
+    width: 22%;
+    font-size: 12px;
+  }
+  #field_detail .control-group .controls{
+    float: left;
+    width: 80%;
+    font-size: 12px;
+  }
+  #field_detail .control-group .controls textarea{
+    min-height: 120px;
+  }
+  .btn-post{
+    width: 120px !important;
+    margin-left: 3%;
+  }
+  #field_detail .control-group .controls input{
+    width: 120px;
+    padding: 2px 10px;
+  }
+  #field_detail .control-group .controls .price{
+    width: 120px;
+  }
+  #field_detail .control-group .controls select{
+    width: 120px;
+    height: 24px;
+    margin-bottom: 10px;
+  }
+  #field_detail .control-group .controls textarea{
+    width: 120px;
+  }
+}
+@media screen  and (min-width: 500px) and (max-width: 600px){
+  #field_detail .control-group .control-label{
+    float: left;
+    width: 40px;
+    font-size: 12px;
+  }
+  #field_detail .control-group .controls{
+    float: left;
+    width: 260px;
+    font-size: 12px;
+  }
+  #field_detail .control-group .controls textarea{
+    min-height: 160px;
+  }
+  .btn-post{
+    margin-left: 15%;
+    width: 100%;
+  }
+  #field_detail .control-group .controls input{
+    width: 92%;
+    padding: 2px 10px;
+  }
+  #field_detail .control-group .controls .price{
+    width: 30%;
+  }
+  #field_detail .control-group .controls select{
+    width: 30%;
+    height: 24px;
+  }
+  #field_detail .control-group .controls textarea{
+    width: 92%;
+  }
+}
+@media screen  and (min-width: 600px) and (max-width: 768px){
+  #field_detail .control-group .control-label{
+    float: left;
+    width: 15%;
+  }
+  #field_detail .control-group .controls{
+    float: left;
+    width: 85%;
+  }
+  #field_detail .control-group .controls textarea{
+    min-height: 160px;
+  }
+  .btn-post{
+    margin-left: 15%;
+  }
+}
+@media screen  and (min-width: 768px) and (max-width: 1000px){
+  #field_detail .control-group .control-label{
+    float: left;
+    width: 15%;
+  }
+  #field_detail .control-group .controls{
+    float: left;
+    width: 85%;
+  }
+  .btn-post{
+    margin-left: 15%;
+  }
+}

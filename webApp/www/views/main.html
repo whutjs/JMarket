@@ -1,0 +1,303 @@
+<ion-view>
+  <div class="tabs tabs-top tabs-stable bord-none " style="background-color: #fff;">
+    <a ng-click="FastGetFirstType(0);" class="tab-item" title="全部" id="tab_type0"><i class="fa fa-circle-o"></i></a>
+    <a ng-click="FastGetFirstType(1);" class="tab-item" title="二手车" id="tab_type1"><i class="fa fa-bicycle"></i></a>
+    <a ng-click="FastGetFirstType(2);" class="tab-item" title="二手手机" id="tab_type2"><i class="fa fa-mobile"></i></a>
+    <a ng-click="FastGetFirstType(3);" class="tab-item" title="PC/PAD" id="tab_type3"><i class="fa fa-plug"></i></a>
+    <a ng-click="FastGetFirstType(4);" class="tab-item" title="二手家电" id="tab_type4"><i class="fa fa-desktop"></i></a>
+    <a ng-click="FastGetFirstType(5);" class="tab-item" title="服装包箱" id="tab_type5"><i class="fa fa-suitcase"></i></a>
+    <a ng-click="FastGetFirstType(6);" class="tab-item" title="图书音像" id="tab_type6"><i class="fa fa-book"></i></a>
+    <a ng-click="FastGetFirstType(7);" class="tab-item" title="生活用品" id="tab_type7"><i class="fa fa-umbrella"></i></a>
+    <a ng-click="FastGetFirstType(8);" class="tab-item" title="体育器材" id="tab_type8"><i class="fa fa-soccer-ball-o"></i></a>
+    <a ng-click="FastGetFirstType(9);" class="tab-item" title="未分类" id="tab_type9"><i class="fa fa-tags"></i></a>
+  </div>
+  <div class="row bord-none" style="margin-top: 100px;">
+    <div class="col col-33" style="padding: 0;">
+      <a ng-click="openPopover($event)" class="button button-full bord-none font-size-14 b-r b-t"
+              style="min-height: 36px; line-height: 36px;margin: 5px 0px;background-color: #fff;">分类
+      </a>
+    </div>
+    <div class="col col-33" style="padding: 0;">
+      <a ng-click="openOrderPopover($event)" class="button button-full bord-none font-size-14 b-r b-t"
+              style="min-height: 36px; line-height: 36px;margin: 5px 0px;background-color: #fff;">排序
+      </a>
+    </div>
+    <div ng-click="openConditionPopover($event)" class="col col-33" style="padding: 0;">
+      <a class="button button-full bord-none font-size-14 b-t"
+              style="min-height: 36px; line-height: 36px;margin: 5px 0px;background-color: #fff;">筛选
+      </a>
+    </div>
+  </div>
+  <script id="popover.html" type="text/ng-template">
+    <ion-popover-view class="platform-ios" style="width: 100%;padding: 0px;color:#333;">
+      <div class="row" style="height: inherit;">
+        <div class="col col-33">
+          <ion-content  class="col" style="height: 260px;font-size: 13px;width:100%;position: relative;" >
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_1">
+              <a class="nav-header menu-first collapsed" id="cate1" data-toggle="collapse" style="cursor: pointer;" type="1" ng-click="showSecondoryType(1);">
+                <i class="fa fa-bicycle text-success"></i>
+                二手车
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_2">
+              <a class="nav-header menu-first collapsed" id="cate2" data-toggle="collapse" style="cursor: pointer;" aria-expanded="false" type="2" ng-click="showSecondoryType(2);">
+                <i class="fa fa-mobile-phone text-danger"></i>
+                二手手机
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_3">
+              <a class="nav-header menu-first collapsed" id="cate3" data-toggle="collapse" style="cursor: pointer;" type="3" ng-click="showSecondoryType(3);">
+                <i class="fa fa-laptop text-warning"></i>
+                PC/PAD
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_4">
+              <a class="nav-header menu-first collapsed" id="cate4" data-toggle="collapse" style="cursor: pointer;" type="4" ng-click="showSecondoryType(4);">
+                <i class="fa fa-plug text-info"></i>
+                二手家电
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_5">
+              <a class="nav-header menu-first collapsed" id="cate5" data-toggle="collapse" style="cursor: pointer;" type="5" ng-click="showSecondoryType(5);">
+                <i class="fa fa-suitcase text-primary"></i>
+                服装包箱
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_6">
+              <a class="nav-header menu-first collapsed" id="cate6" data-toggle="collapse" style="cursor: pointer;" type="6" ng-click="showSecondoryType(6);">
+                <i class="fa fa-book text-info-dk"></i>
+                图书音像
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_7">
+              <a class="nav-header menu-first collapsed" id="cate7" data-toggle="collapse" style="cursor: pointer;" type="7" ng-click="showSecondoryType(7);">
+                <i class="fa fa-umbrella text-yellow-color"></i>
+                生活用品
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px;font-size: 15px;border: none;" id="ion_item_8">
+              <a  class="nav-header menu-first collapsed" id="cate8" data-toggle="collapse" style="cursor: pointer;" type="8" ng-click="showSecondoryType(8);">
+                <i class="fa fa-soccer-ball-o text-danger-lter"></i>
+                体育器材
+              </a>
+            </ion-item>
+            <ion-item style="padding: 8px 4px; font-size: 15px;border: none;" id="ion_item_9">
+              <a ng-click="getCategory(9);" class="nav-header menu-first collapsed" id="cate9" data-toggle="collapse" style="cursor: pointer;" type="9" >
+                <i class="fa fa-tags text-success-lter"></i>
+                未分类
+              </a>
+            </ion-item>
+          </ion-content>
+        </div>
+        <div class="col col-67 b-l padding-left" style="border-radius: 12px;">
+          <ion-content class="col" style="height: 260px;width:100%;position: relative;">
+            <ul id="sechand_bycles" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px; padding: 6px 10px;">
+              <li ng-click="getCategory(100);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate100" type="100"><i class="fa fa-bicycle"></i> 普通自行车</a></li>
+              <li ng-click="getCategory(101);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate101" type="101"><i class="fa fa-bicycle"></i> 山地自行车</a></li>
+              <li ng-click="getCategory(102);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate102" type="102"><i class="fa fa-bicycle"></i> 折叠自行车</a></li>
+              <li ng-click="getCategory(103);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate103" type="103"><i class="fa fa-bicycle"></i> 迷你自行车</a></li>
+              <li ng-click="getCategory(104);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate104" type="104"><i class="fa fa-bicycle"></i> 公路自行车</a></li>
+              <li ng-click="getCategory(105);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate105" type="105"><i class="fa fa-bicycle"></i> 电动车</a></li>
+              <li ng-click="getCategory(106);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate106" type="106"><i class="fa fa-car"></i> 其他车</a></li>
+            </ul>
+            <ul id="sechand_phone" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(200);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate200" type="200"><i class="fa fa-apple"></i> 苹果</a></li>
+              <li ng-click="getCategory(201);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate201" type="201"><i class="fa fa-mobile"></i> 三星</a></li>
+              <li ng-click="getCategory(202);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate202" type="202"><i class="fa fa-android"></i> 小米</a></li>
+              <li ng-click="getCategory(203);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate203" type="203"><i class="fa fa-mobile"></i> 华为</a></li>
+              <li ng-click="getCategory(204);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate204" type="204"><i class="fa fa-mobile"></i> HTC</a></li>
+              <li ng-click="getCategory(205);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate205" type="205"><i class="fa fa-windows"></i> 诺基亚</a></li>
+              <li ng-click="getCategory(206);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate206" type="206"><i class="fa fa-mobile"></i> 魅族</a></li>
+              <li ng-click="getCategory(207);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate207" type="207"><i class="fa fa-mobile"></i> 索尼</a></li>
+              <li ng-click="getCategory(208);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate208" type="208"><i class="fa fa-mobile"></i> 中兴</a></li>
+              <li ng-click="getCategory(209);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate209" type="209"><i class="fa fa-mobile"></i> LG</a></li>
+              <li ng-click="getCategory(210);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate210" type="210"><i class="fa fa-windows"></i> 联想</a></li>
+              <li ng-click="getCategory(211);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate211" type="211"><i class="fa fa-mobile"></i> 酷派</a></li>
+              <li ng-click="getCategory(212);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate212" type="212"><i class="fa fa-mobile-phone"></i> 其他手机</a></li>
+            </ul>
+            <ul id="sechand_pc" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(300);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate300" type="300"><i class="fa fa-desktop"></i> 台式机</a></li>
+              <li ng-click="getCategory(301);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate301" type="301"><i class="fa fa-laptop"></i> ThinkPad/IBM</a></li>
+              <li ng-click="getCategory(302);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate302" type="302"><i class="fa fa-apple"></i> 苹果(Mac)</a></li>
+              <li ng-click="getCategory(303);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate303" type="303"><i class="fa fa-laptop"></i> 联想(Lenovo)</a></li>
+              <li ng-click="getCategory(304);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate304" type="304"><i class="fa fa-laptop"></i> 戴尔(DELL)</a></li>
+              <li ng-click="getCategory(305);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate305" type="305"><i class="fa fa-laptop"></i> 华硕(ASUS)</a></li>
+              <li ng-click="getCategory(306);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate306" type="306"><i class="fa fa-laptop"></i> 惠普(HP)</a></li>
+              <li ng-click="getCategory(307);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate307" type="307"><i class="fa fa-laptop"></i> 索尼(Sony)</a></li>
+              <li ng-click="getCategory(308);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate308" type="308"><i class="fa fa-laptop"></i> 三星(Samsung)</a></li>
+              <li ng-click="getCategory(309);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate309" type="309"><i class="fa fa-laptop"></i> 其他电脑</a></li>
+              <li ng-click="getCategory(310);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate310" type="310"><i class="fa fa-tablet"></i> iPad</a></li>
+              <li ng-click="getCategory(311);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate311" type="311"><i class="fa fa-tablet"></i> Surface</a></li>
+              <li ng-click="getCategory(312);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate312" type="312"><i class="fa fa-tablet"></i> 三星平板</a></li>
+              <li ng-click="getCategory(313);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate313" type="313"><i class="fa fa-tablet"></i> 小米平板</a></li>
+              <li ng-click="getCategory(314);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate314" type="314"><i class="fa fa-tablet"></i> 联想平板</a></li>
+              <li ng-click="getCategory(315);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate315" type="315"><i class="fa fa-tablet"></i> 其他平板</a></li>
+            </ul>
+            <ul id="sechand_home_applications" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(400);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate400" type="400"><i class="fa fa-plug"></i> 洗衣机</a></li>
+              <li ng-click="getCategory(401);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate401" type="401"><i class="fa fa-plug"></i> 厨房电器</a></li>
+              <li ng-click="getCategory(402);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate402" type="402"><i class="fa fa-plug"></i> 冰箱/冰柜</a></li>
+              <li ng-click="getCategory(403);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate403" type="403"><i class="fa fa-camera"></i> 数码相机</a></li>
+              <li ng-click="getCategory(404);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate404" type="404"><i class="fa fa-plug"></i> 其他家电</a></li>
+            </ul>
+            <ul id="sechand_clothes" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(500);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate500" type="500"><i class="fa fa-user-md"></i> T恤</a></li>
+              <li ng-click="getCategory(501);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate501" type="501"><i class="fa fa-user"></i> 衬衫</a></li>
+              <li ng-click="getCategory(502);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate502" type="502"><i class="fa fa-user-md"></i> 外套</a></li>
+              <li ng-click="getCategory(503);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate503" type="503"><i class="fa fa-user-md"></i> 裤子</a></li>
+              <li ng-click="getCategory(504);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate504" type="504"><i class="fa fa-user-md"></i> 西装</a></li>
+              <li ng-click="getCategory(505);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate505" type="505"><i class="fa fa-user-md"></i> 裙子</a></li>
+              <li ng-click="getCategory(506);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate506" type="506"><i class="fa fa-list"></i> 休闲鞋</a></li>
+              <li ng-click="getCategory(507);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate507" type="507"><i class="fa fa-list"></i> 运动鞋</a></li>
+              <li ng-click="getCategory(508);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate508" type="508"><i class="fa fa-list"></i> 帆布鞋</a></li>
+              <li ng-click="getCategory(509);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate509" type="509"><i class="fa fa-list"></i> 高跟鞋</a></li>
+              <li ng-click="getCategory(510);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate510" type="510"><i class="fa fa-list"></i> 皮鞋</a></li>
+              <li ng-click="getCategory(511);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate511" type="511"><i class="fa fa-briefcase"></i> 单肩包</a></li>
+              <li ng-click="getCategory(512);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate512" type="512"><i class="fa fa-briefcase"></i> 双肩包</a></li>
+              <li ng-click="getCategory(513);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate513" type="513"><i class="fa fa-briefcase"></i> 书包</a></li>
+              <li ng-click="getCategory(514);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate514" type="514"><i class="fa fa-briefcase"></i> 钱包</a></li>
+              <li ng-click="getCategory(515);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate515" type="515"><i class="fa fa-suitcase"></i> 电脑包</a></li>
+              <li ng-click="getCategory(516);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate516" type="516"><i class="fa fa-briefcase"></i> 箱子</a></li>
+              <li ng-click="getCategory(517);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate517" type="517"><i class="fa fa-list"></i> 其他服饰</a></li>
+            </ul>
+            <ul id="sechand_book_and_cd" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(600);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate600" type="600"><i class="fa fa-book"></i> 专业书籍</a></li>
+              <li ng-click="getCategory(601);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate601" type="601"><i class="fa fa-book"></i> 考试(GRE/托福/雅思)</a></li>
+              <li ng-click="getCategory(602);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate602" type="602"><i class="fa fa-book"></i> 小说/文学</a></li>
+              <li ng-click="getCategory(603);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate603" type="603"><i class="fa fa-book"></i> 工具书/辅导书</a></li>
+              <li ng-click="getCategory(604);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate604" type="604"><i class="fa fa-book"></i> 生活类书籍</a></li>
+              <li ng-click="getCategory(605);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate605" type="605"><i class="fa fa-calculator"></i> 学生文具</a></li>
+              <li ng-click="getCategory(606);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate606" type="606"><i class="fa fa-tablet"></i> 学习机</a></li>
+              <li ng-click="getCategory(607);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate607" type="607"><i class="fa fa-music"></i> 乐器</a></li>
+              <li ng-click="getCategory(608);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate608" type="608"><i class="fa fa-bell"></i> 音响</a></li>
+              <li ng-click="getCategory(609);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate609" type="609"><i class="fa fa-headphones"></i> 耳机</a></li>
+              <li ng-click="getCategory(610);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate610" type="610"><i class="fa fa-square"></i> U盘/硬盘</a></li>
+              <li ng-click="getCategory(611);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate611" type="611"><i class="fa fa-music"></i> MP3/iPod/iWatch</a></li>
+              <li ng-click="getCategory(612);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate612" type="612"><i class="fa fa-book"></i> 其他图书</a></li>
+            </ul>
+            <ul id="sechand_gadgets" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(700);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate700" type="700"><i class="fa fa-lightbulb-o"></i> 电灯</a></li>
+              <li ng-click="getCategory(701);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate701" type="701"><i class="fa fa-umbrella"></i> 雨伞</a></li>
+              <li ng-click="getCategory(702);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate702" type="702"><i class="fa fa-circle-thin"></i> 梳子/镜子</a></li>
+              <li ng-click="getCategory(703);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate703" type="703"><i class="fa fa-money"></i> 家具</a></li>
+              <li ng-click="getCategory(704);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate704" type="704"><i class="fa fa-wheelchair"></i> 桌椅板凳</a></li>
+              <li ng-click="getCategory(705);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate705" type="705"><i class="fa fa-stop"></i> 垫褥床铺</a></li>
+              <li ng-click="getCategory(706);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate706" type="706"><i class="fa fa-coffee"></i> 茶杯/水杯</a></li>
+              <li ng-click="getCategory(707);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate707" type="707"><i class="fa fa-child"></i> 布偶/娃娃</a></li>
+              <li ng-click="getCategory(708);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate708" type="708"><i class="fa fa-plus-square"></i> 其他生活用品</a></li>
+            </ul>
+            <ul id="sechand_sports" class="nav nav-list collapse menu-second" style="display: none;font-size: 14px;padding: 6px 10px;">
+              <li ng-click="getCategory(800);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate800" type="800"><i class="fa fa-male"></i> 健身器材</a></li>
+              <li ng-click="getCategory(801);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate801" type="801"><i class="fa fa-circle"></i> 网球</a></li>
+              <li ng-click="getCategory(802);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate802" type="802"><i class="fa fa-soccer-ball-o"></i> 足球</a></li>
+              <li ng-click="getCategory(803);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate803" type="803"><i class="fa fa-circle"></i> 篮球</a></li>
+              <li ng-click="getCategory(804);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate804" type="804"><i class="fa fa-circle"></i> 乒乓球</a></li>
+              <li ng-click="getCategory(805);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate805" type="805"><i class="fa fa-circle"></i> 羽毛球</a></li>
+              <li ng-click="getCategory(806);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate806" type="806"><i class="fa fa-tree"></i> 户外用品</a></li>
+              <li ng-click="getCategory(807);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate807" type="807"><i class="fa fa-tint"></i> 游泳用品</a></li>
+              <li ng-click="getCategory(808);" class="m-t-md b-b" style="padding-bottom: 8px;"><a class="cursor-pointer" id="second_cate808" type="808"><i class="fa fa-cogs"></i> 其他体育用品</a></li>
+            </ul>
+          </ion-content>
+        </div>
+      </div>
+    </ion-popover-view>
+  </script>
+  <script id="order-popover.html" type="text/ng-template">
+    <ion-popover-view class="platform-ios" style="width: 33%; height:100px; padding: 0px;color:#333;font-size: 14px;border-radius: 2px;">
+      <ul class="list">
+        <li class="item bord-none b-b" style="padding: 8px 10px;">
+          <a ng-click="sortBy(0)" class="btn-sort button-full padder b-b" id="sort_by_time" type="0" style="padding-bottom: 8px;cursor: pointer">
+            <span style="font-size: 14px;"><i class="fa fa-clock-o text-success"></i> 时间</span>
+          </a>
+        </li>
+        <li ng-click="sortBy(1)" class="item bord-none b-b" style="padding: 8px 10px;">
+          <a class="btn-sort button-full padder b-b" id="sort_by_price" type="1" style="padding-bottom: 8px;cursor: pointer">
+            <span style="font-size: 14px;"><i class="fa fa-rmb text-warning"></i> 价格</span>
+          </a>
+        </li>
+        <!--<li ng-click="sortBy(2)" class="item bord-none b-b" style="padding: 8px 10px;">-->
+          <!--<a class="btn-sort button-full padder b-b" id="sort_by_hot" type="2" style="padding-bottom: 8px;cursor: pointer">-->
+            <!--<span style="font-size: 14px;"><i class="fa fa-fire text-danger"></i> 热度</span>-->
+          <!--</a>-->
+        <!--</li>-->
+      </ul>
+    </ion-popover-view>
+  </script>
+  <script id="condition-popover.html" type="text/ng-template">
+    <ion-popover-view class="platform-ios" style="width: 98%;padding: 0px;color:#333;padding: 5px 5px; border-radius: 12px;">
+      <div id="filters" style="margin-top: 0px; margin-bottom: 0px;">
+        <div class="clearfix condition-item-field">
+          <label class="text-right field">价格</label>
+          <a class="btn btn-neeed " id="price0" price="0" ng-click="getPrice(0);">不限</a>
+          <a class="btn btn-neeed " id="price1" price="1" ng-click="getPrice(1);">10元以下</a>
+          <a class="btn btn-neeed " id="price2" price="2" ng-click="getPrice(2);">10-50元</a>
+          <a class="btn btn-neeed " id="price3" price="3" ng-click="getPrice(3);">50-100元</a>
+          <a class="btn btn-neeed " id="price4" price="4" ng-click="getPrice(4);">100-200元</a>
+          <a class="btn btn-neeed " id="price5" price="5" ng-click="getPrice(5);">200-400元</a>
+          <a class="btn btn-neeed " id="price6" price="6" ng-click="getPrice(6);">400-600元</a>
+          <a class="btn btn-neeed " id="price7" price="7" ng-click="getPrice(7);">600-800元</a>
+          <a class="btn btn-neeed " id="price8" price="8" ng-click="getPrice(8);">800-1000元</a>
+          <a class="btn btn-neeed " id="price9" price="9" ng-click="getPrice(9);">1000-2000元</a>
+          <a class="btn btn-neeed " id="price10" price="10" ng-click="getPrice(10);">2000元以上</a>
+        </div>
+        <div class="clearfix condition-item-field">
+          <label class="text-right field">新旧</label>
+          <a class="btn btn-neeed " id="quality0" quality="0" ng-click="getQuality(0);">不限</a>
+          <a class="btn btn-neeed " id="quality1" quality="1" ng-click="getQuality(1);">全新</a>
+          <a class="btn btn-neeed " id="quality2" quality="2" ng-click="getQuality(2);">九成新</a>
+          <a class="btn btn-neeed " id="quality3" quality="3" ng-click="getQuality(3);">八成新</a>
+          <a class="btn btn-neeed " id="quality4" quality="4" ng-click="getQuality(4);">七成新</a>
+          <a class="btn btn-neeed " id="quality5" quality="5" ng-click="getQuality(5);">六成新</a>
+          <a class="btn btn-neeed " id="quality6" quality="6" ng-click="getQuality(6);">五成新</a>
+          <a class="btn btn-neeed " id="quality7" quality="7" ng-click="getQuality(7);">五成新以下</a>
+        </div>
+        <div class="clearfix condition-item-field">
+          <label class="text-right field">校区</label>
+          <a class="btn btn-neeed " id="campus0" campus="0" ng-click="getCampus(0);">不限</a>
+          <a class="btn btn-neeed " id="campus1" campus="1" ng-click="getCampus(1);">闵行校区</a>
+          <a class="btn btn-neeed " id="campus2" campus="2" ng-click="getCampus(2);">徐汇校区</a>
+        </div>
+      </div>
+      <div class="clearfix condition-item-field">
+        <a ng-click="conditionSearch()" class="button button-full button-self-design bord-none"
+           style="border-radius: 25px; height: 32px; line-height: 32px;min-height: 32px;">检索</a>
+      </div>
+    </ion-popover-view>
+  </script>
+
+  <ion-content style="margin-top: 92px;">
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list class="main-list">
+        <ion-item ng-repeat="cardData in mainData" class="myCard bord-none">
+            <div class="list card mylist" ng-click="details(cardData.item_id)" style="border: 1px solid #ddd; padding: 0px;margin: 5px;">
+
+                <div class="item item-avatar">
+                    <!--<img src="../img/user.png">-->
+                    <img ng-src="{{cardData.avatar_path}}">
+
+                    <h2>{{cardData.username}}</h2>
+                    <span class="post-date">{{cardData.postDate}}</span>
+                    <span style="color: red; z-index: 9999; float:right; font-size: 18px;">￥{{cardData.price}}</span>
+                </div>
+
+                <div class="item item-image">
+                    <img ng-src="{{cardData.postImgPath_show}}" style="max-height: 400px;width: auto;margin: auto;">
+                </div>
+
+                <div class="item" style="font-size: 13px;">
+                    <p style="width: 100%;white-space: normal;">{{cardData.title}}</p>
+                </div>
+
+                <div class="item" style="font-size: 13px;">
+                    <span class="left">来自于<span style="color: #FFD300">{{cardData.location}}</span></span>
+                    <span class="right post-date">{{cardData.postDate}}</span>
+                </div>
+            </div>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+

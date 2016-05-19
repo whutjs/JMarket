@@ -1,0 +1,103 @@
+.father-container{
+    margin-top: 50px;
+    width: 100%;
+    padding: 2.5%;
+    position: relative;
+}
+.father-container .sidebar-container{
+    width: 25%;
+    float: left;
+}
+.father-container .content-container{
+    width: 75%;
+    float: right;
+}
+.fluid{
+    text-align: center;
+    margin: auto;
+}
+.error-div{
+    margin-top: 7%;
+}
+.icon{
+    font-size: 4em;
+    color: #FFD300;
+    margin-top: 20px;
+}
+.btn-circle {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    line-height: 1.0;
+    background: #FFD300;
+    background: rgba(255,211,0,.9);
+    color: #333;
+    font-family: PMNCaeciliaW01-45Light,Georgia,serif;
+    font-size: 1.2em;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+#fourohfour section#lost .btn-circle span {
+    font-size: 24px;
+}
+.btn-circle p{
+    margin: 0;
+    padding: 0;
+}
+.btn-circle .icon {
+    vertical-align: middle;
+    display: inline-block;
+    /*line-height: 1.2;*/
+    text-align: center;
+    width: 100%;
+    color: #333;
+}
+.error-404{
+    font-size: 3.8em;
+    padding: 0;
+    margin: 0;
+}
+.back-to-mainpage{
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+}
+.back-to-mainpage:hover{
+    color: #333;
+}
+.oops{
+    width:315px;
+    font-size: 13px;
+    margin: 30px auto;
+}
+.reasons, .sorry{
+    color: #333;
+    font-weight: 600;
+}
+.oops p{
+    text-align: left;
+    font-size: 16px;
+}
+.oops ul li{
+    float: left;
+    list-style: disc;
+    line-height: 1.6;
+}
+.back{
+    width: 315px;
+    margin: 30px auto;
+    text-align: left;
+}
+hr{
+    width: 320px;
+    border-top: 1px solid #FFD300 !important;
+}

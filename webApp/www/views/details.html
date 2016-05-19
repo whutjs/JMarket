@@ -1,0 +1,69 @@
+<ion-view>
+  <ion-content>
+    <ul rn-carousel  rn-carousel-index="carouselIndex3" rn-carousel-transition="hexagon" rn-carousel-buffered class="carousel3 ng-scope" style="max-height: 500px; min-height: 300px; height: 300px;">
+      <li ng-repeat="image in detailsImages" class="ng-scope" style="display: inline-block; transform: translate3d(-200%, 0px, 0px) rotateY(-120deg); transform-origin: 100% 50% 0px; text-align: center;margin: auto;">
+        <div class="layer" style="margin: auto;text-align: center; background-color: #f4f4f4;">
+          <img style="height: 300px;text-align: center;margin: 0 auto;" ng-src="{{ image.postImgPath }}">
+        </div>
+      </li>
+    </ul>
+
+    <div class="list card" class="myCard bord-none">
+
+      <div class="item item-avatar bord-none">
+        <img src="{{detailsData.avatarPath}}">
+        <h2>{{detailsData.username}}</h2>
+        <span class="post-date">{{detailsData.postDate}}</span>
+        <span style="color: red; z-index: 9999; float:right; font-size: 16px; background-color: #e0e0e0; border-radius: 10px; padding: 1px 5px;">￥{{detailsData.price}}</span>
+      </div>
+
+      <div class="item item-body bord-none">
+        <p class="title" style="text-align: left; margin: 0px 0px 25px 0px; padding: 0px;">
+          {{detailsData.title}}
+        </p>
+
+        <div class="row responsive-sm flower-type" style="margin: 0px;padding: 0px;">
+          <div class="col detail-item" style="margin: 10px 0px; padding: 0px;">位置::<span>{{detailsData.location}}</span></div>
+          <div class="col detail-item" style="margin: 10px 0px; padding: 0px;">新旧::<span>{{detailsData.quality}}</span></div>
+          <div class="col detail-item" style="margin: 10px 0px; padding: 0px;">手机::<span>{{detailsData.phone}}</span></div>
+          <div class="col detail-item" style="margin: 10px 0px; padding: 0px;">微信::<span>{{detailsData.wechat}}</span></div>
+          <div class="col detail-item" style="margin: 10px 0px; padding: 0px;">QQ::<span>{{detailsData.qq}}</span></div>
+        </div>
+
+      </div>
+
+      <div class="item item-text-wrap details bord-none">
+        {{detailsData.details}}
+      </div>
+
+      <div class="item tabs tabs-secondary tabs-icon-left bord-none">
+        <a class="tab-item text-success left" href="#">
+          <i class="icon ion-ios-chatbubble-outline"></i>
+          {{countComments}} 条评论
+        </a>
+        <a class="tab-item text-danger right" href="#">
+          <i class="icon ion-ios-cart"></i>
+          {{countCollections}} 条收藏
+        </a>
+      </div>
+
+    </div>
+
+    <div class="list bord-none" style="margin-bottom: 50px;">
+      <div class="item item-avatar bord-none" ng-repeat="comment in commentsData">
+        <img class="comment-user-avatar" ng-src="{{comment.avatarPath}}" style="width: 32px;height: 32px;">
+        <h2 class="comment-author" style="font-size: 13px;">{{comment.username}}</h2>
+        <p class="comment-date" style="font-size: 10px;">{{comment.commentsDate}}</p>
+        <div class="comment-content" style="font-size: 14px;width: 100%;white-space:normal; ">{{comment.commentsContent}}</div>
+      </div>
+    </div>
+  </ion-content>
+
+  <div class="bar bar-footer item-input-inset bord-none" style="background-color: #f7f7f7;width: 100%;">
+    <label class="item item-input bord-none"  style="background-color: #f7f7f7;width: 90%;">
+      <i class="icon ion-android-create placeholder-icon"></i>
+      <input type="search" placeholder="如果喜欢的话，添加您的评论" ng-model="postcomment.input"  style="background-color: #f7f7f7;">
+    </label>
+    <button class="button button-self-design pull-right bord-none"  ng-click="doComment()">评论</button>
+  </div>
+</ion-view>

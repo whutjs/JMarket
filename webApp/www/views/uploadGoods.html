@@ -1,0 +1,87 @@
+<ion-view>
+  <ion-content>
+    <!-- SHOW ERROR/SUCCESS MESSAGES -->
+    <div id="messages" ng-show="message">{{ message }}</div>
+
+    <form class="post-form" id="post_form" name="postForm">
+      <div class="list list-inset" id="type-group" style="width: 60%;">
+        <ionic-city-picker placeholder="选择分类" tag="-" backdrop=true backdrop-click-to-close=false css-class="xxx" ok-text="确定" citydata="type"  button-clicked="vm.cb();getType(type);"></ionic-city-picker>
+        <input type="hidden"  id="first_type"  name="firstCate" required ng-model="postFormData.first_type">
+        <input type="hidden"  id="second_type"  ng-model="postFormData.second_type">
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.firstCate.$error.required"><i class="fa fa-warning"></i></p>
+      </div>
+      <div class="list list-inset" style="width: 60%;">
+
+        <label class="item item-input item-select">
+          <div class="input-label" style="font-size: 14px;">
+            新旧程度
+          </div>
+          <select id="quality" required ng-model="postFormData.quality" name="quality">
+            <option selected value="1">全新</option>
+            <option value="2">九成新</option>
+            <option value="3">八成新</option>
+            <option value="4">七成新</option>
+            <option value="5">六成新</option>
+            <option value="6">五成新</option>
+            <option value="7">五成新以下</option>
+          </select>
+        </label>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.quality.$error.required"><i class="fa fa-warning"></i></p>
+      </div>
+      <div class="list list-inset" style="width: 60%;">
+        <label class="item item-input">
+          <i class="icon ion-social-yen-outline placeholder-icon"></i>
+          <input type="number" placeholder="价格" id="price" name="price" required min="0" ng-model="postFormData.price" >
+        </label>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.price.$error.required"><i class="fa fa-warning"></i></p>
+      </div>
+      <div class="list list-inset" style="width: 60%;">
+        <ionic-location-picker placeholder="位置" tag="-" required backdrop=true backdrop-click-to-close=false css-class="xxx" ok-text="确定" locationdata="postFormData.location"  button-clicked="vm.cb()"></ionic-location-picker>
+        <input type="hidden"  id="firstLoc"  name="firstLoc" required ng-model="postFormData.location">
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.firstLoc.$error.required"><i class="fa fa-warning"></i></p>
+      </div>
+
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-ios-pricetags-outline placeholder-icon"></i>
+          <input type="text" placeholder="标题：6-50字" id="title" name="title" required ng-minlength="6" ng-maxlength="50" ng-model="postFormData.title">
+        </label>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.title.$error.required"><i class="fa fa-warning"></i></p>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.title.$error.minlength" class="help-block">字数太短</p>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.title.$error.maxlength" class="help-block">字数过多</p>
+      </div>
+
+      <div class="list list-inset">
+        <label class="item item-input">
+          <textarea id="detail" ng-minlength="10" ng-maxlength="2000" name="detail" required placeholder="说明我们未提供的内容，如物品的细节之处，何时购入，是否在保修期等等,10-2000字" style="min-height: 180px;" ng-model="postFormData.detail"></textarea>
+        </label>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.detail.$error.required"><i class="fa fa-warning"></i></p>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.detail.$error.minlength" class="help-block">字数太短</p>
+        <p style="color: #FF3030;margin-top: 5px;margin-bottom: 0px;" ng-show="postForm.detail.$error.maxlength" class="help-block">字数过多</p>
+      </div>
+
+      <div class="list list-inset">
+        <button class="button bord-none" ng-click="pickImage()"
+                style="height: 36px;min-height:36px;font-size: 14px;line-height: 36px;background-color: #eee;">
+          添加图片
+        </button>
+      </div>
+
+      <div class="list list-inset" style="border: 1px solid #ddd; min-height: 80px;">
+        <div class="row">
+          <div ng-repeat="perImgSrc in imgSrc" style="width: 33.333%;">
+            <img ng-src="{{perImgSrc}}" style="width: 100%;border: 1px solid#eee; box-shadow: 0 5px 5px rgba(120,120,120,0.6);">
+          </div>
+        </div>
+      </div>
+
+      <div class="list list-inset">
+        <button class="button button-full button-self-design btn-post bord-none" id="btn_post" type="submit"
+               ng-disabled="postForm.$invalid"
+               style="border-radius: 30px;width: 100%;height: 36px; min-height: 36px;line-height: 36px;background-color: #FFD300;color: #333;font-weight: 600;"  ng-click="processPostForm()
+               ">发布</button>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

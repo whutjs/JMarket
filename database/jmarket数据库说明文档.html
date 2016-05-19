@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>jmarket数据库说明文档</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="date" content="Fri, 20 Nov 2015 22:58:28 +0800">
+	<meta name="generator" content="MySQL-Front 5.3  (Build 4.196)">
+	<style type="text/css"><!--
+		body {font-family: Arial,Helvetica,sans-serif; font-size: 12px;}
+		h1 {font-size: 18px; text-decoration: bold;}
+		h2 {font-size: 16px; text-decoration: bold;}
+		h3 {font-size: 14px; text-decoration: bold;}
+		th,
+		td {font-size: 12px; border-color: #000000; border-style: solid; border-width: 1px; padding: 1px; font-weight: normal;}
+		code {font-size: 12px;}
+		.TableObject {border-collapse: collapse; border-color: #000000; font-family: Microsoft Sans Serif}
+		.TableData {border-collapse: collapse; border-color: #000000; font-family: Microsoft Sans Serif}
+		.TableHeader {border-color: #000000; text-decoration: bold; background-color: #e0e0e0;}
+		.StructureHeader {padding-left: 5px; text-align: left; border-color: #000000; text-decoration: bold;}
+		.Structure {text-align: left; border-color: #aaaaaa;}
+		.odd {}
+		.even {}
+		.DataHeader {padding-left: 5px; text-align: left; border-color: #000000; background-color: #e0e0e0;}
+		.Null {color: #999999;}
+		.PrimaryKey {font-weight: bold;}
+		.RightAlign {text-align: right;}
+	--></style>
+</head>
+<body>
+<h1 class="DatabaseTitle">数据库: jmarket</h1>
+<h2>表格: t_collection</h2>
+<p>备注: 用户收藏表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_collection" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>C_id</td><td>unique</td><td></td></tr>
+	<tr class="Structure"><td >collection_item</td><td>C_item</td><td>&nbsp;</td><td>与t_item表的外键</td></tr>
+	<tr class="Structure"><td >collection_user</td><td>C_user</td><td>&nbsp;</td><td>与t_user表的外键</td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_collection" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td>C_user</td><td>varchar(20)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户编号</td>	</tr>
+	<tr class="Structure"><td>C_item</td><td>varchar(20)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>物品编号</td>	</tr>
+	<tr class="Structure"><td class="PrimaryKey">C_id</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>&nbsp;</td>	</tr>
+</table><br>
+<h3>约束:</h3>
+<table border="0" cellspacing="0" summary="t_collection" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th></tr>
+	<tr><th>collection_item</th><td>C_item -&gt; t_item.I_id</td><td>cascade on delete, cascade on update</td></tr>
+	<tr><th>collection_user</th><td>C_user -&gt; t_user.U_id</td><td>cascade on delete, cascade on update</td></tr>
+</table><br>
+<h2>表格: t_item</h2>
+<p>备注: 物品表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_item" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>I_id</td><td>unique</td><td></td></tr>
+	<tr class="Structure"><td >item_user</td><td>I_owner</td><td>&nbsp;</td><td>与t_user表的外键</td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_item" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td class="PrimaryKey">I_id</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>物品编号</td>	</tr>
+	<tr class="Structure"><td>I_name</td><td>varchar(128)</td><td>否</td><td></td><td>&nbsp;</td><td>物品的名称</td>	</tr>
+	<tr class="Structure"><td>I_description</td><td>text</td><td>否</td><td>&nbsp;</td><td>&nbsp;</td><td>物品的描述</td>	</tr>
+	<tr class="Structure"><td>I_date</td><td>datetime</td><td>否</td><td>0000-00-00 00:00:00</td><td>&nbsp;</td><td>物品添加时间</td>	</tr>
+	<tr class="Structure"><td>U_flag</td><td>varchar(5)</td><td>否</td><td>0</td><td>&nbsp;</td><td>物品的状态0表示未售出，1表示已经售出</td>	</tr>
+	<tr class="Structure"><td>U_type</td><td>varchar(20)</td><td>否</td><td>0</td><td>&nbsp;</td><td>这里存放的是物品类型的编号,0表示未分类</td>	</tr>
+	<tr class="Structure"><td>I_owner</td><td>varchar(20)</td><td>否</td><td>0</td><td>&nbsp;</td><td>物品的拥有者</td>	</tr>
+</table><br>
+<h3>约束:</h3>
+<table border="0" cellspacing="0" summary="t_item" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th></tr>
+	<tr><th>item_user</th><td>I_owner -&gt; t_user.U_id</td><td>cascade on delete, cascade on update</td></tr>
+</table><br>
+<h2>表格: t_itemphoto</h2>
+<p>备注: 物品照片表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_itemphoto" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>P_id</td><td>unique</td><td></td></tr>
+	<tr class="Structure"><td >photo_item</td><td>P_itemId</td><td>&nbsp;</td><td>与t_item表的外键</td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_itemphoto" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td class="PrimaryKey">P_id</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>物品照片的编号</td>	</tr>
+	<tr class="Structure"><td>P_itemId</td><td>varchar(20)</td><td>否</td><td>0</td><td>&nbsp;</td><td>照片所对应商品的编号</td>	</tr>
+	<tr class="Structure"><td>P_path</td><td>varchar(255)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>物品照片的路径</td>	</tr>
+</table><br>
+<h3>约束:</h3>
+<table border="0" cellspacing="0" summary="t_itemphoto" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th></tr>
+	<tr><th>photo_item</th><td>P_itemId -&gt; t_item.I_id</td><td>cascade on delete, cascade on update</td></tr>
+</table><br>
+<h2>表格: t_itemtype</h2>
+<p>备注: 物品类型表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_itemtype" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>T_id</td><td>unique</td><td></td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_itemtype" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td class="PrimaryKey">T_id</td><td>varchar(20)</td><td>否</td><td>0</td><td>&nbsp;</td><td>物品类别的编号，默认0表示未分类</td>	</tr>
+	<tr class="Structure"><td>T_mainclass</td><td>varchar(50)</td><td>否</td><td>未分类</td><td>&nbsp;</td><td>物品的1级类目，默认为未分类</td>	</tr>
+	<tr class="Structure"><td>T_secondclass</td><td>varchar(50)</td><td>否</td><td>未分类</td><td>&nbsp;</td><td>物品的2级类目，默认为未分类</td>	</tr>
+</table><br>
+<h2>表格: t_message</h2>
+<p>备注: 评论表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_message" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>M_id</td><td>unique</td><td></td></tr>
+	<tr class="Structure"><td >message_item</td><td>M_item</td><td>&nbsp;</td><td>与t_item表的外键</td></tr>
+	<tr class="Structure"><td >message_message</td><td>M_parentid</td><td>&nbsp;</td><td>与t_message表的外键</td></tr>
+	<tr class="Structure"><td >message_user</td><td>M_user</td><td>&nbsp;</td><td>与t_user表的外键</td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_message" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td class="PrimaryKey">M_id</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>留言编号</td>	</tr>
+	<tr class="Structure"><td>M_item</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>发表留言的物品编号</td>	</tr>
+	<tr class="Structure"><td>M_user</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>留言用户编号</td>	</tr>
+	<tr class="Structure"><td>M_parentid</td><td>varchar(20)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>回复消息的父id</td>	</tr>
+	<tr class="Structure"><td>M_content</td><td>text</td><td>否</td><td>&nbsp;</td><td>&nbsp;</td><td>留言的内容</td>	</tr>
+	<tr class="Structure"><td>M_date</td><td>datetime</td><td>否</td><td>0000-00-00 00:00:00</td><td>&nbsp;</td><td>留言发表的时间</td>	</tr>
+</table><br>
+<h3>约束:</h3>
+<table border="0" cellspacing="0" summary="t_message" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th></tr>
+	<tr><th>message_item</th><td>M_item -&gt; t_item.I_id</td><td>cascade on delete, cascade on update</td></tr>
+	<tr><th>message_message</th><td>M_parentid -&gt; t_message.M_id</td><td>cascade on delete, cascade on update</td></tr>
+	<tr><th>message_user</th><td>M_user -&gt; t_user.U_id</td><td>cascade on delete, cascade on update</td></tr>
+</table><br>
+<h2>表格: t_user</h2>
+<p>备注: 用户表</p>
+<h3>索引:</h3>
+<table border="0" cellspacing="0" summary="t_user" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td  class="PrimaryKey">主索引</td><td>U_id</td><td>unique</td><td></td></tr>
+</table><br>
+<h3>字段:</h3>
+<table border="0" cellspacing="0" summary="t_user" class="TableObject">
+	<tr class="TableHeader StructureHeader"><th>名称</th><th>类型</th><th>空</th><th>默认值</th><th>属性</th><th>备注</th></tr>
+	<tr class="Structure"><td class="PrimaryKey">U_id</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>用户的id</td>	</tr>
+	<tr class="Structure"><td>U_name</td><td>varchar(50)</td><td>否</td><td></td><td>&nbsp;</td><td>用户名</td>	</tr>
+	<tr class="Structure"><td>U_password</td><td>varchar(20)</td><td>否</td><td></td><td>&nbsp;</td><td>用户密码</td>	</tr>
+	<tr class="Structure"><td>U_sex</td><td>varchar(5)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户的性别</td>	</tr>
+	<tr class="Structure"><td>U_email</td><td>varchar(128)</td><td>否</td><td></td><td>&nbsp;</td><td>用户邮箱</td>	</tr>
+	<tr class="Structure"><td>U_type</td><td>varchar(5)</td><td>是</td><td>1</td><td>&nbsp;</td><td>表明用户的类型，普通用户(1)或者管理员(0)</td>	</tr>
+	<tr class="Structure"><td>U_qq</td><td>varchar(20)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户的qq号码</td>	</tr>
+	<tr class="Structure"><td>U_wechat</td><td>varchar(128)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户的微信号</td>	</tr>
+	<tr class="Structure"><td>U_image</td><td>varchar(255)</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户头像的图片路径</td>	</tr>
+	<tr class="Structure"><td>U_flag</td><td>varchar(5)</td><td>否</td><td>0</td><td>&nbsp;</td><td>用户的状态，0是未经过邮箱验证的用户，1是邮箱验证过的</td>	</tr>
+	<tr class="Structure"><td>U_regtime</td><td>datetime</td><td>是</td><td>&lt;空&gt;</td><td>&nbsp;</td><td>用户注册时间</td>	</tr>
+</table><br>
+</body>
+</html>

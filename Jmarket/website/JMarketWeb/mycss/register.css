@@ -1,0 +1,113 @@
+.register-div{
+    height: auto;
+    width: 100%;
+    color: #b0b0b0;
+}
+.register-form{
+    height: auto;
+    width: 35%;
+    margin: auto;
+    padding: 4% 4% 6% 4%;
+    background-color: #121317;
+    margin-top: 8%;
+}
+.register-input{
+    background-color: #333 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: 1.1em;
+    color: #fff;
+}
+.btn-register{
+    background-color: #D27D10;
+    width: 100%;
+    color: #000;
+    font-size: 1.1em !important;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.btn-register:hover{
+    background-color: #D26020;
+}
+#login{
+    color: #D27D10;
+}
+.register-form>.form-control{
+    color: #FFF;
+}
+
+@media screen and (max-width : 500px){
+    #register_form.form-control {
+        height: 22px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 10px !important;
+    }
+    .btn-register{
+        height: 24px;
+        font-size: 0.85em !important;
+        padding: 2px 12px !important;
+    }
+    .sjtu-logo{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width : 500px) and (max-width: 768px){
+    #register_form.form-control {
+        height: 28px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 18px !important;
+    }
+    .btn-register{
+        height: 28px;
+        font-size: 0.85em !important;
+        padding: 2px 12px !important;
+    }
+    .sjtu-logo{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width : 768px) and (max-width: 1000px){
+    #register_form.form-control {
+        height: 32px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 24px !important;
+    }
+    .sjtu-logo{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (min-width : 1000px) and (max-width: 1366px){
+    #register_form.form-control {
+        height: 36px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 30px !important;
+    }
+    .sjtu-logo{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width : 1366px){
+    #register_form.form-control {
+        height: 40px !important;
+    }
+    #register_form.form-group{
+        margin-bottom: 36px !important;
+    }
+    .sjtu-logo{
+        width: 120px;
+        height: 120px;
+    }
+}

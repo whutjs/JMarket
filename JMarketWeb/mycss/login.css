@@ -1,0 +1,255 @@
+.login-div{
+  height: auto;
+  width: 80%;
+  color: #b0b0b0;
+  margin: auto;
+}
+.login-form{
+  /*height: auto;*/
+  /*width: 90%;*/
+  /*margin: auto;*/
+  padding: 4%;
+}
+.login-input{
+  border-bottom: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 0 !important;
+  font-size: 1.1em;
+  color: #808080;
+  background-color: transparent;
+  box-shadow: none;
+}
+.btn-login{
+  /*border-radius: 0 !important;*/
+  background-color: #FFD300;
+  width: 100%;
+  color: #000;
+  font-size: 1.1em !important;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.btn-login:hover{
+  background-color: #FFB300;
+
+}
+.glyphicon-logo{
+  color:#FFF;
+  text-align: center;
+  color: #333;
+}
+.avatar-form-group{
+  text-align: center;
+}
+.user{
+  margin: auto;
+  border-radius: 50%;
+  background-color: #FFD300;
+}
+.welcome{
+  margin-bottom: 40px !important;
+  color: #303030;
+}
+#forget_password{
+  float: right;
+  color: #333;
+}
+#forget_password:hover{
+  color: #FFD300;
+}
+.checkbox{
+  margin-bottom: 10px !important;
+}
+.father-container{
+  margin-top: 50px;
+  width: 100%;
+  padding: 2.5%;
+  position: relative;
+}
+.father-container .sidebar-container{
+  width: 25%;
+  float: left;
+}
+.father-container .content-container{
+  width: 75%;
+  float: right;
+}
+.breadcrumb {
+  margin-bottom: 30px;
+}
+.breadcrumb > li {
+  display: inline-block;
+  text-shadow: 0 1px 0 #ffffff;
+}
+.heading1 {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #efefef;
+  margin-top: 0px;
+  font-size: 34px;
+}
+.heading1 .maintext {
+  font-size: 24px;
+  color: #333;
+  text-transform: uppercase;
+  padding: 0px 14px 4px 0;
+  font-family: 'Crete Round', serif;
+}
+.heading1 .subtext {
+  font-size: 14px;
+  color: #999;
+  text-transform: none;
+  font-weight: normal;
+  padding: 0px;
+}
+.newcustomer {
+  padding: 4% 8%;
+}
+.newcustomer {
+  border-left: 1px solid #ccc;
+}
+.heading2 {
+  font-size: 24px;
+  color: #FFD300;
+  text-transform: none;
+  font-weight: normal;
+  padding: 0px;
+}
+.btn-orange {
+  font-size: 0.9em;
+  color: #000;
+  font-weight: 600;
+  text-shadow: none;
+  background: #FFD300;
+  box-shadow: none;
+  border-radius: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.breadcrumb-first-level{
+  color: #808080;
+}
+.breadcrumb-second-level{
+  color: #222;
+  font-weight: 600;
+}
+.input-group-addon {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+.input-group-line{
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0px;
+}
+#login_form input{
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+@media screen and (max-width : 991px){
+  .newcustomer {
+    border-top: 1px solid #ccc;
+    border-left: none;
+  }
+}
+
+
+@media screen and (max-width : 500px){
+  .user{
+    width: 35px;
+    height: 35px;
+  }
+  .glyphicon-logo{
+    font-size: 20px;
+    top:4px;
+  }
+  #login_form.form-control {
+    height: 22px !important;
+  }
+  #login_form.form-group{
+    margin-bottom: 10px !important;
+  }
+  .btn-login{
+    height: 24px;
+    font-size: 0.85em !important;
+    padding: 2px 12px !important;
+  }
+}
+.btn-disabled{
+  background: #ccc !important;
+}
+
+
+
+@media screen and (min-width : 500px) and (max-width: 768px){
+  .user{
+    width: 50px;
+    height: 50px;
+  }
+  .glyphicon-logo{
+    font-size: 25px;
+    top:9px;
+  }
+  #login_form.form-control {
+    height: 28px !important;
+  }
+  #login_form.form-group{
+    margin-bottom: 18px !important;
+  }
+}
+
+@media screen and (min-width : 768px) and (max-width: 1000px){
+  .user{
+    width: 60px;
+    height: 60px;
+  }
+  .glyphicon-logo{
+    font-size: 30px;
+    top:12px;
+  }
+  #login_form.form-control {
+    height: 32px !important;
+  }
+  #login_form.form-group{
+    margin-bottom: 24px !important;
+  }
+}
+
+@media screen and (min-width : 1000px) and (max-width: 1366px){
+  .user{
+    width: 70px;
+    height: 70px;
+  }
+  .glyphicon-logo{
+    font-size: 35px;
+    top:15px;
+  }
+  #login_form.form-control {
+    height: 36px !important;
+  }
+  #login_form.form-group{
+    margin-bottom: 30px !important;
+  }
+}
+
+@media screen and (min-width : 1366px){
+  .user{
+    width: 80px;
+    height: 80px;
+  }
+  .glyphicon-logo{
+    font-size: 40px;
+    top:20px;
+  }
+  #login_form.form-control {
+    height: 40px !important;
+  }
+  #login_form.form-group{
+    margin-bottom: 36px !important;
+  }
+}

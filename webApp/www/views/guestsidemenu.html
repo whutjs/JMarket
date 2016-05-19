@@ -1,0 +1,62 @@
+<style>
+  #btn_search:before {
+    vertical-align: top;
+    font-size: 32px;
+    line-height: 32px;
+  }
+</style>
+<ion-side-menus enable-menu-with-back-views="false" xmlns="http://www.w3.org/1999/html">
+  <ion-side-menu-content edge-drag-threshold="true" drag-content="true">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <!--<ion-header-bar class="bar-stable">-->
+      <!--<h1 class="title">JMarket</h1>-->
+    <!--</ion-header-bar>-->
+    <ion-content class="sidebar-scroll">
+      <ion-list>
+        <form>
+          <div class="row">
+            <div class="col col-90">
+              <input type="text" ng-model="searchInput.keyword" class="form-control" placeholder="输入内容" style="border: 1px solid #ccc;border-radius: 20px;padding: 5px 8px;float:left; width: 100%;">
+            </div>
+            <div class="col col-10">
+            <span class="input-group-btn">
+              <!--<i class="icon ion-ios-search-strong" style="float: right;line-height: 34px;"></i>-->
+              <a ng-click="mySearch();" class="icon ion-ios-search-strong" style="font-size:1.7em;float: right;line-height: 34px;cursor: pointer;"></a>
+            </span>
+            </div>
+          </div>
+        </form>
+        <ion-item menu-close href="#/guest/main">
+          <i class="ion-ios-person-outline m-r-md font-size-18 left" style="font-size: 22px; color: #B9B9B9"></i>
+          <a href="#/guest/login" class="thumb-md left img-box" style="line-height: 32px;">
+            登录
+          </a>
+        </ion-item>
+        <ion-item menu-close href="#/guest/main">
+          <i class="ion-ios-personadd-outline m-r-md font-size-18 left" style="font-size: 22px; color: #B9B9B9"></i>
+          <a href="#/guest/register" class="thumb-md left img-box" style="line-height: 32px;">
+            注册
+          </a>
+        </ion-item>
+      </ion-list>
+      <div class="b-b"></div>
+      <ion-list>
+        <ion-item menu-close href="#/guest/main">
+          <i class="ion-ios-home-outline m-r-md font-size-18" style="font-size: 22px; color: #B9B9B9"></i>主页
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
